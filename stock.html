@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMG Warehouse Stock Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stock.css">
+    <style>
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="user-info">
+                    <span><i class="fas fa-user"></i> John Doe (Warehouse Manager)</span>
+                    <span><i class="fas fa-building"></i> BMG Warehouse - Johannesburg</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <div class="logo">
+                <!-- Placeholder for BMG logo -->
+                <div style="width: 50px; height: 50px; background-color: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">BMG</div>
+                <h1>Warehouse Management</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">JD</div>
+                <div>
+                    <div>John Doe</div>
+                    <div style="font-size: 12px; color: var(--gray);">Warehouse Manager</div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-boxes"></i> Stock Management</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> Stock Check</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bin Locations</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-box-open"></i> Receive Stock</a></li>
+                    <li><a href="#"><i class="fas fa-shipping-fast"></i> Dispatch Stock</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> Stock Check</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bin Locations</a></li>
+                    <li><a href="#"><i class="fas fa-exchange-alt"></i> Stock Transfer</a></li>
+                    <li><a href="#"><i class="fas fa-clipboard-list"></i> Stocktake</a></li>
+                    <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Discrepancies</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> System Settings</a></li>
+                </ul>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="content">
+                <div class="page-title">
+                    <h2>Stock Check & Bin Location</h2>
+                    <div>
+                        <button class="search-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Cards -->
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Total Stock Items</div>
+                            <div class="card-icon primary">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">12,458</div>
+                        <div class="card-footer">Across 245 bin locations</div>
+                    </div>
+                    
+                    <div class="card warning">
+                        <div class="card-header">
+                            <div class="card-title">Stock Discrepancies</div>
+                            <div class="card-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">23</div>
+                        <div class="card-footer">Requires attention</div>
+                    </div>
+                    
+                    <div class="card danger">
+                        <div class="card-header">
+                            <div class="card-title">Missing Stock</div>
+                            <div class="card-icon danger">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">7</div>
+                        <div class="card-footer">Items not found in bins</div>
+                    </div>
+                    
+                    <div class="card success">
+                        <div class="card-header">
+                            <div class="card-title">Accuracy Rate</div>
+                            <div class="card-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="card-value">98.7%</div>
+                        <div class="card-footer">Last updated: Today</div>
+                    </div>
+                </div>
+
+                <!-- Stock Search -->
+                <div class="search-container">
+                    <h3 class="search-title">Check Stock & Bin Location</h3>
+                    <form class="search-form" id="stockSearchForm">
+                        <input type="text" class="search-input" id="stockCode" placeholder="Enter Part Number or Stock Code" required>
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results -->
+                <div class="results-container" id="resultsContainer">
+                    <!-- Results will be displayed here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BMG World</h3>
+                    <p>Providing world-class bearing solutions and industrial supplies across Africa.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@bmgworld.net</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 BMG World. All rights reserved. | Warehouse Management System v2.1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="stock.js"></script>
+</body>
+</html>
